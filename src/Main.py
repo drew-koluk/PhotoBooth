@@ -4,6 +4,7 @@ from tkinter.messagebox import showinfo
 import threading
 from Camera import openCamera
 
+#tCAM is a random name, feel free to change it to whatever. its just the threading for the opencamera code
 def tCAM():
     threading.Thread(target=openCamera,daemon=True).start()
 

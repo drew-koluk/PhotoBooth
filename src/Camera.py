@@ -9,7 +9,9 @@ def openCamera():
         if not ret:
            break
         cv.imshow('Camera', frame)
-        
+#press button = Take screenshot not figutred out yet
+
+#the window X button works to close the camera now
         if cv.waitKey(1) & 0xFF == ord('q'):
             break
         
