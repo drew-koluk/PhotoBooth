@@ -5,7 +5,6 @@ import threading
 from Camera import openCamera
 from Camera import takephoto
 
-#tCAM is a random name, feel free to change it to whatever. its just the threading for the opencamera code
 def threadCAM():
     threading.Thread(target=openCamera,daemon=True).start()
 
@@ -39,6 +38,3 @@ class App(tk.Tk):
 if __name__ == "__main__":
     app = App()
     app.mainloop()
-
-
- 
