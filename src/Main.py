@@ -4,6 +4,9 @@ from tkinter.messagebox import showinfo
 import threading
 from Camera import openCamera
 
+def tCAM():
+    threading.Thread(target=openCamera,daemon=True).start()
+
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -16,8 +19,11 @@ class App(tk.Tk):
         self.hello_label = tk.Label(self,text="Welcome To the Photo Booth")
         self.hello_label.pack()
 
-        self.open_camera = tk.Button(self, text="Open Camera Frame", command=openCamera)
+        self.open_camera = tk.Button(self, text="Open Camera Frame", command=tCAM)
         self.open_camera.pack()
+
+        self.Take_Picture = tk.Button(self, text="Take A Photo!")
+        self.Take_Picture.pack()
 
         self.button = tk.Button(self, text='Click Me')
         self.button['command'] = self.button_clicked
@@ -31,4 +37,6 @@ class App(tk.Tk):
 if __name__ == "__main__":
     app = App()
     app.mainloop()
+
+
  
