@@ -1,9 +1,14 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter.messagebox import showinfo
+import threading
+import Camera
 
-def openCamera():
-    print("this worked")
+def Camera():
+    thread = threading.Thread(target=openCamera)
+    print("thread started")
+    thread.start()
+    
 
 
 class App(tk.Tk):
@@ -18,7 +23,7 @@ class App(tk.Tk):
         self.hello_label = tk.Label(self,text="Welcome To the Photo Booth")
         self.hello_label.pack()
 
-        self.open_camera = tk.Button(self, text="Open Camera Frame", command=openCamera)
+        self.open_camera = tk.Button(self, text="Open Camera Frame", command=Camera)
         self.open_camera.pack()
 
         self.button = tk.Button(self, text='Click Me')
