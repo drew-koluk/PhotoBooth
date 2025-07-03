@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append('/home/kali/.local/lib/python3.11/site-packages')
+
 import cv2 as cv
 
 cap = cv.VideoCapture(1)
