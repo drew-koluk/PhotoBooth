@@ -24,4 +24,3 @@ if __name__ == "__main__":
     root.title("My Tkinter App")
     app = Application(master=root)
     app.mainloop()
-    print("testing")
