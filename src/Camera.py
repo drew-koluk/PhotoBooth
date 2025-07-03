@@ -1,21 +1,15 @@
-
 import cv2 as cv
 
 
-def OpenCamera():
-    cap = cv.VideoCapture(0)
-
+def openCamera():
+    cap = cv.VideoCapture(0, cv.CAP_DSHOW)
     while True:
         ret, frame = cap.read()
-
         if not ret:
-            print("Can't receive frame (stream end?). Exiting ...")
-            break
-        
-        cv.imshow('frame', frame)
+           break
+        cv.imshow('Camera', frame)
         if cv.waitKey(1) & 0xFF == ord('q'):
             break
-    
-    # When everything done, release the capture
+        
     cap.release()
     cv.destroyAllWindows()
