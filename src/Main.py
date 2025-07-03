@@ -25,3 +25,7 @@ if __name__ == "__main__":
     app = Application(master=root)
     app.mainloop()
     print("testing")
+
+
+
+    print("Hello Dumbass")
