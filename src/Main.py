@@ -6,7 +6,7 @@ from Camera import openCamera
 from Camera import takephoto
 
 #tCAM is a random name, feel free to change it to whatever. its just the threading for the opencamera code
-def tCAM():
+def threadCAM():
     threading.Thread(target=openCamera,daemon=True).start()
 
 class App(tk.Tk):
@@ -21,7 +21,7 @@ class App(tk.Tk):
         self.hello_label = tk.Label(self,text="Welcome To the Photo Booth")
         self.hello_label.pack()
 
-        self.open_camera = tk.Button(self, text="Open Camera Frame", command=tCAM)
+        self.open_camera = tk.Button(self, text="Open Camera Frame", command=threadCAM)
         self.open_camera.pack()
 
         self.Take_Picture = tk.Button(self, text="Take A Photo!", command=takephoto)
