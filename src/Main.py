@@ -5,6 +5,7 @@ import threading
 from Camera import openCamera
 from Camera import takephoto
 
+
 def threadCAM():
     threading.Thread(target=openCamera,daemon=True).start()
 
@@ -25,6 +26,7 @@ class App(tk.Tk):
 
         self.Take_Picture = tk.Button(self, text="Take A Photo!", command=takephoto)
         self.Take_Picture.pack()
+
 
         self.button = tk.Button(self, text='Click Me')
         self.button['command'] = self.button_clicked
